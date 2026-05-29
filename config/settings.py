@@ -28,7 +28,7 @@ DEBUG = False
 
 # ALLOWED_HOSTS = []
 
-ALLOWED_HOSTS = ["tessalia.onrender.com"]
+ALLOWED_HOSTS = []
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
