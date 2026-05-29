@@ -23,18 +23,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-z78%36#!m0j2zdiah2ybj7sr-=l@6pbqz%=-22kjdt#5_!c)vu'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
 
-# ALLOWED_HOSTS = ["tessalia.onrender.com"]
+ALLOWED_HOSTS = ["tessalia.onrender.com"]
 
-# STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
-# MIDDLEWARE = [
-#     "django.middleware.security.SecurityMiddleware",
-#     "whitenoise.middleware.WhiteNoiseMiddleware",
-# ]
+MIDDLEWARE = [
+    "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
+]
 
 
 # Application definition
