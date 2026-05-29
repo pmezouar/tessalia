@@ -28,8 +28,11 @@ DEBUG = False
 
 # ALLOWED_HOSTS = []
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = [
+    "tessalia.onrender.com",
+    "localhost",
+    "127.0.0.1"
+]
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
 MIDDLEWARE = [
