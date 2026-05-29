@@ -34,16 +34,6 @@ ALLOWED_HOSTS = [
     "127.0.0.1"
 ]
 
-STATIC_URL = '/static/'
-
-STATIC_ROOT = BASE_DIR / "staticfiles"
-
-MIDDLEWARE = [
-    "django.middleware.security.SecurityMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
-]
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -57,6 +47,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+        "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -132,6 +124,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
 
 # MEDIAS
 MEDIA_URL = "/media/"
