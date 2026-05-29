@@ -1,0 +1,209 @@
+@use "settings";
+
+// PATHOLOGY
+#pathology {
+  padding: 100px 50px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 50px;
+
+  @media screen and (max-width: 576px) {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+  }
+
+  .presentation {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    gap: 20px;
+    align-items: center;
+    text-align: justify;
+
+    @media screen and (max-width: 576px) {
+      grid-template-columns: 1fr;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+    }
+
+    span {
+      background: settings.$secondary;
+      padding: 5px 10px;
+      border-radius: 50px;
+      font-size: 13px;
+      color: settings.$white;
+      text-transform: uppercase;
+    }
+
+    div {
+      display: flex;
+      gap: 50px;
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: start;
+      justify-content: center;
+
+      .items {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+
+        @media screen and (max-width: 576px) {
+          grid-template-columns: 1fr;
+          text-align: center;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .item {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 10px;
+          background: settings.$bg;
+          padding: 10px;
+          border-radius: 10px;
+
+          i {
+            font-size: 20px;
+            color: settings.$primary;
+            background: settings.$secondary;
+            padding: 5px 7px;
+            border-radius: 50%;
+          }
+
+          div {
+            gap: 10px;
+
+            h2 {
+              font-size: 12px;
+            }
+
+            p {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 5px settings.$black-shadow;
+    }
+  }
+
+  .symptoms {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+    @media screen and (max-width: 576px) {
+      grid-template-columns: 1fr;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .symptom {
+      padding: 20px;
+      background: settings.$white;
+      border-radius: 10px;
+      box-shadow: 0 0 5px settings.$black-shadow;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap: 20px;
+
+      i {
+        color: settings.$primary;
+        font-size: 25px;
+      }
+    }
+  }
+
+  #evaluation {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: settings.$bg;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px settings.$black-shadow;
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+  }
+
+  #caresAndEmotionalSupport {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+
+    @media screen and (max-width: 576px) {
+      grid-template-columns: 1fr;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .cares {
+      display: flex;
+      gap: 20px;
+      flex-direction: column;
+      flex-wrap: wrap;
+
+      .care {
+        padding: 20px;
+        background: settings.$white;
+        border-radius: 10px;
+        box-shadow: 0 0 5px settings.$black-shadow;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        i {
+          color: settings.$primary;
+          font-size: 25px;
+        }
+      }
+    }
+
+    .emotional-support {
+      display: flex;
+      gap: 50px;
+      flex-wrap: wrap;
+      flex-direction: column;
+      background: settings.$bg;
+      padding: 50px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px settings.$black-shadow;
+
+      .item {
+        display: flex;
+        gap: 10px;
+
+        span {
+          font-size: 18px;
+          color: settings.$primary;
+          font-weight: 600;
+        }
+
+        h3 {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}

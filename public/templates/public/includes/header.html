@@ -1,0 +1,29 @@
+{% load static %}
+<header>
+  <div class="wrapper">
+
+    <a href="/">
+      <img
+      src="{% static 'public/images/logo_slogan.png' %}"
+      alt="Logo Tessalia"
+      class="logo"
+      />
+    </a>
+    <div class="icons-nav">
+      <i class="bi bi-list" id="openIcon"></i>
+      <i class="bi bi-x-circle" id="closeIcon"></i>
+    </div>
+    
+      <nav>
+      <a href="/">Accueil</a>
+      <a href="/categories">Catégories</a>
+      <a href="/pathologies">Pathologies</a>
+      <a href="/ressources">Ressources</a>
+    </nav>
+  </div>
+    
+  <form action="{% url 'search' %}" method="GET">
+    {{ searchForm }}
+    <button type="submit"><i class="bi bi-search"></i></button>
+  </form>
+</header>

@@ -1,0 +1,75 @@
+@use "settings";
+
+// HEADER
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background: settings.$white;
+  box-shadow: 0 0 5px settings.$black-shadow;
+  z-index: 1;
+
+  .wrapper {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+
+    @media screen and (max-width: 1140px) {
+      width: calc(100% - 20px);
+      display: grid;
+      grid-template-columns: 80% 20%;
+      grid-template-areas:
+        "aa ab"
+        "ac ac";
+      gap: 20px;
+    }
+
+    img {
+      max-width: 300px;
+      width: 100%;
+    }
+
+    .icons-nav {
+      display: none;
+
+      @media screen and (max-width: 1140px) {
+        display: block;
+      }
+
+      i {
+        font-size: 25px;
+      }
+
+      #closeIcon {
+        display: none;
+      }
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+
+      @media screen and (max-width: 1140px) {
+        display: none;
+        flex-direction: column;
+        grid-area: ac;
+        margin: 0 auto;
+        text-align: center;
+        width: 100%;
+      }
+    }
+  }
+
+  form {
+    button {
+      i {
+        margin-right: 0;
+      }
+    }
+  }
+}

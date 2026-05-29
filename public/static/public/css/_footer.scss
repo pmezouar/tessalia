@@ -1,0 +1,23 @@
+@use "settings";
+
+// FOOTER
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background: settings.$white;
+  box-shadow: 0 0 5px settings.$black-shadow;
+  z-index: 1;
+
+  * {
+    font-size: 13px;
+  }
+
+  a {
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+}

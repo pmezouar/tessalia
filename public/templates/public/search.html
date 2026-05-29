@@ -1,0 +1,29 @@
+{% extends 'public/layout.html' %}
+
+<!-- BODY -->
+
+{% block body %}
+<!-- HEADER -->
+{% include 'public/includes/header.html' %}
+
+<!-- MAIN -->
+<main class="results-list">
+  <h1>Recherche : {{ query }}</h1>
+
+  <!-- Liste des pathologies -->
+  <section id="list">
+    {% if results %} {% for pathology in results %}
+    <a href="/pathologie/{{ pathology.slug }}" class="item">
+      <p>{{ pathology.name }}</p>
+    </a>
+    {% endfor %} {% else %}
+    <p>Aucun résultat trouvé.</p>
+    {% endif %}
+  </section>
+</main>
+
+<!-- FOOTER -->
+{% include 'public/includes/footer.html' %}
+
+<!-- FIN DU BODY -->
+{% endblock %}

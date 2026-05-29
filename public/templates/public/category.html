@@ -1,0 +1,41 @@
+{% extends 'public/layout.html' %}
+
+<!-- Title -->
+{% block title %}{{ category.name }} | {% endblock %}
+
+<!-- BODY -->
+{% block body %}
+
+<!-- HEADER -->
+{% include 'public/includes/header.html' %}
+
+<!-- MAIN -->
+<main class="results-list">
+  <div class="presentation">
+    <div>
+      <h1>{{ category.name }}</h1>
+      <p class="intro">{{ category.description }}</p>
+    </div>
+    <img src="/media/{{ category.image }}" alt="{{ category.name }}" />
+  </div>
+
+  <!-- Liste des pathologies de la catégorie -->
+  <h2>Liste des pathologies associées à cette catégorie</h2>
+  <section id="list">
+    {% if pathologies %}
+      {% for pathology in pathologies %}
+        <a href="/pathologie/{{ pathology.slug }}" class="item">
+          <p>{{ pathology.name }}</p>
+        </a>
+      {% endfor %}
+    {% else %}
+      <p>Aucune pathologie trouvée.</p>
+    {% endif %}
+  </section>
+</main>
+
+<!-- FOOTER -->
+{% include 'public/includes/footer.html' %}
+
+<!-- FIN DU BODY -->
+{% endblock %}

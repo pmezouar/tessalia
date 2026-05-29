@@ -1,0 +1,29 @@
+{% extends 'public/layout.html' %} {% load static %}
+
+<!-- Title -->
+{% block title %}{{ resource.name }} | {% endblock %}
+
+<!-- BODY -->
+{% block body %}
+<!-- HEADER -->
+{% include 'public/includes/header.html' %}
+
+<!-- MAIN -->
+<main id="pathology">
+  <div class="presentation">
+    <div>
+      <h1>{{ resource.name }}</h1>
+      <p>{{ resource.description|linebreaksbr }}</p>
+      <a target="_blank" href="/media/{{ resource.file }}" class="button"
+        ><i class="bi bi-upload"></i>Télécharger</a
+      >
+    </div>
+    <img src="/media/{{ resource.image }}" alt="{{ resource.name }}" />
+  </div>
+</main>
+
+<!-- FOOTER -->
+{% include 'public/includes/footer.html' %}
+
+<!-- FIN DU BODY -->
+{% endblock %}

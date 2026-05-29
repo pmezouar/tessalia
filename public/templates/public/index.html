@@ -1,0 +1,100 @@
+{% extends 'public/layout.html' %}
+{% load static %}
+
+<!-- BODY -->
+{% block body %}
+<!-- HEADER -->
+{% include 'public/includes/header.html' %}
+
+<!-- MAIN -->
+<main>
+    <section id="hero">
+        <div>
+            <span>En collaboration avec le CLUD de l'Institut Saint Pierre</span>
+            <h1>Tessalia - Comprendre la douleur pédiatrique avec clarté et compassion</h1>
+            <p>Une ressource essentielle pour les parents et les soignants, transformant la
+                science de la douleur en outils pratiques pour soulager et soutenir les
+                enfants.</p>
+            <form action="{% url 'search' %}" method="GET">
+                {{ searchForm }}
+                <button type="submit"><i class="bi bi-search"></i></button>
+            </form>
+        </div>
+        <img src="{% static 'public/images/tessalia.png' %}" alt="Tessalia">
+    </section>
+
+    <section id="categories">
+        <h2>Explorer par catégorie</h2>
+        <p>Trouvez des informations ciblées selon le type de douleurs pédiatriques.</p>
+        {% if categories %}
+        <div class="grid-container">
+            {% for category in categories %}
+            <div class="item">
+
+                <img src="/media/{{ category.image }}" alt="{{ category.name }}">
+
+                <div class="text-content">
+
+                    <h3>{{ category.name }}</h3>
+                    <p>{{ category.description }}</p>
+
+                    <a href="categorie/{{ category.slug }}">Voir la catégorie <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p>Aucune catégorie trouvée.</p>
+        {% endif %}
+    </section>
+
+    <section id="impact">
+
+        <div class="content">
+            <div>
+                <h2>L'impact de Tessalia en chiffres</h2>
+                <p class="intro">
+                    Nous croyons que la clarté est le premier pas vers la guérison. Nos données montrent que des parents
+                    et des
+                    soignants informés réduisent l'anxiété de l'enfant de 40%.
+                </p>
+                <div class="grid-container">
+                    <div class="item">
+                        <p>50K+</p>
+                        <span>Familles accompagnées</span>
+                    </div>
+                    <div class="item">
+                        <p>200+</p>
+                        <span>Protocoles pédiatriques</span>
+                    </div>
+                    <div class="item">
+                        <p>15</p>
+                        <span>Centres hospitaliers partenaires</span>
+                    </div>
+                    <div class="item">
+                        <p>24/7</p>
+                        <span>Support communautaire</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="card">
+                <div class="content-card">
+                    <i class="bi bi-stars"></i>
+                    <h3>Notre vision</h3>
+                    <p class="quote">"Chaque enfant mérite un soulagement basé sur l'empathie et la science. Nous
+                        construisons le pont entre les deux. "</p>
+                    <span class="signature">Priscilla MEZOUAR</span>
+                    <span class="feature">Fondatrice de tessalia</span>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- FOOTER -->
+{% include 'public/includes/footer.html' %}
+
+<!-- FIN DU BODY -->
+{% endblock %}

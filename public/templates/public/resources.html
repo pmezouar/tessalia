@@ -1,0 +1,41 @@
+{% extends 'public/layout.html' %}
+
+<!-- Title -->
+{% block title %}Ressources | {% endblock %}
+
+<!-- BODY -->
+{% block body %}
+<!-- HEADER -->
+{% include 'public/includes/header.html' %}
+
+<!-- MAIN -->
+<main class="results-list">
+  <h1>Ressources</h1>
+  <p>
+    Une liste de ressources à votre dispositions pour vous aider à mieux
+    comprendre et traiter la douleur pédiatrique.
+  </p>
+
+  <!-- Liste des pathologies -->
+  <section id="list">
+    {% if resources %}
+      {% for resource in resources %}
+        <a href="/ressource/{{ resource.slug }}" class="item">
+          <img src="/media/{{ resource.image }}" alt="{{ resource.name }}" />
+          <div>
+            <h2>{{ resource.name }}</h2>
+            <p>{{ resource.description_short }}</p>
+          </div>
+        </a>
+      {% endfor %}
+    {% else %}
+      <p>Aucune ressource trouvée.</p>
+    {% endif %}
+  </section>
+</main>
+
+<!-- FOOTER -->
+{% include 'public/includes/footer.html' %}
+
+<!-- FIN DU BODY -->
+{% endblock %}

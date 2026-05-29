@@ -1,0 +1,124 @@
+{% extends 'public/layout.html' %} {% load static %}
+
+<!-- Title -->
+{% block title %}{{ pathology.name }} | {% endblock %}
+
+<!-- BODY -->
+{% block body %}
+<!-- HEADER -->
+{% include 'public/includes/header.html' %}
+
+<!-- MAIN -->
+<main id="pathology">
+  <div class="presentation">
+    <div>
+      <span>{{ pathology.category }}</span>
+
+      <h1>{{ pathology.name }}</h1>
+      <p>{{ pathology.description|linebreaksbr }}</p>
+
+      <div class="items">
+        <div class="item">
+          <i class="bi bi-exclamation-triangle"></i>
+          <div>
+            <h2>Sévérité</h2>
+            <p>{{ pathology.severity }}</p>
+          </div>
+        </div>
+        <div class="item">
+          <i class="bi bi-people"></i>
+          <div>
+            <h2>Prévalence</h2>
+            <p>{{ pathology.prevalence }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img src="/media/{{ pathology.image }}" alt="{{ pathology.name }}" />
+  </div>
+
+  <h2>Symptômes et types de douleur</h2>
+  {% if symptoms %}
+  <div class="symptoms">
+    {% for symptom in symptoms %}
+    <div class="symptom">
+      <i class="{{ symptom.icon}}"></i>
+      <h3>{{ symptom.name }}</h3>
+      <p>{{ symptom.description }}</p>
+    </div>
+
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <div id="evaluation">
+    <h2>Échelle de douleur visuelle</h2>
+    <p>
+      Un outil empathique pour aider les enfants à communiquer l'intensité de
+      leur inconfort. N'oubliez pas : chaque enfant exprime sa douleur
+      différemment.
+    </p>
+
+    <div id="evaluation-level">
+      <img
+        src="{% static 'public/images/echelle-douleur-doudoul.png' %}"
+        alt="Échelle douleur"
+      />
+    </div>
+  </div>
+
+  <div id="caresAndEmotionalSupport">
+    {% if cares %}
+    <div class="cares">
+      <h2>Soins possibles</h2>
+      {% for care in cares %}
+      <div class="care">
+        <i class="{{ care.icon}}"></i>
+        <h3>{{ care.name }}</h3>
+        <p>{{ care.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="emotional-support">
+      <h2>Soutien émotionnel</h2>
+      <div class="item">
+        <span>01.</span>
+        <div>
+          <h3>Écoute active</h3>
+          <p>
+            "Je vois que tu as mal aujourd'hui. Comment puis-je t'aider à te
+            sentir mieux ?
+          </p>
+        </div>
+      </div>
+      <div class="item">
+        <span>02.</span>
+        <div>
+          <h3>Normalisation</h3>
+          <p>
+            Aidez l'enfant à comprendre que la maladie ne définit pas qui il
+            est. Encouragez ses passions hors du cadre médical.
+          </p>
+        </div>
+      </div>
+      <div class="item">
+        <span>03.</span>
+        <div>
+          <h3>Techniques de distraction</h3>
+          <p>
+            Lors des épisodes douloureux, utilisez la lecture, les jeux ou la
+            musique pour déplacer le focus attentionnel.
+          </p>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</main>
+
+<!-- FOOTER -->
+{% include 'public/includes/footer.html' %}
+
+<!-- FIN DU BODY -->
+{% endblock %}
