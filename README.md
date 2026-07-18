@@ -7,8 +7,7 @@
 ![Status](https://img.shields.io/badge/Status-Active-success)
 ![Responsive](https://img.shields.io/badge/Design-Mobile--First-purple)
 
-🔗 **Live Demo** : https://tessalia.onrender.com/  
-🔗 **Video Demo**:  https://youtu.be/a9a18qfjIFY
+🔗 **Accès local** : http://127.0.0.1:8000/
 ⚙️ Application web complète avec interface publique et back-office administrateur
 📱 Compatible mobile et desktop
 
